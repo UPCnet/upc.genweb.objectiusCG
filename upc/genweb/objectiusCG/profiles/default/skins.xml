@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<object name="portal_skins"
+        meta_type="Plone Skins Tool"
+        allow_any="False"
+        cookie_persistence="False"
+        request_varname="plone_skin">
+
+ <object name="objectiuscg_images"
+         meta_type="Filesystem Directory View"
+         directory="upc.genweb.objectiusCG:skins/objectiuscg_images"/>
+ <object name="objectiuscg_styles"
+         meta_type="Filesystem Directory View"
+         directory="upc.genweb.objectiusCG:skins/objectiuscg_styles"/>
+ <object name="objectiuscg_templates"
+         meta_type="Filesystem Directory View"
+         directory="upc.genweb.objectiusCG:skins/objectiuscg_templates"/>
+ 
+ <skin-path name="*">
+  <layer insert-after="custom" 
+         name="objectiuscg_images"/>
+  <layer insert-after="custom" 
+         name="objectiuscg_styles"/>
+  <layer insert-after="custom" 
+         name="objectiuscg_templates"/>
+ </skin-path>
+
+</object>

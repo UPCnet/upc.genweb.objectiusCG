@@ -1,0 +1,39 @@
+# archgenxml generated POT File
+# unknown <unknown>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom tipus del projecte GUNI\n"
+"POT-Creation-Date: Wed Apr 15 11:36:31 2009\n"
+"PO-Revision-Date: Wed Apr 15 11:36:31 2009\n"
+"Last-Translator: unknown <unknown>\n"
+"Language-Team: unknown <unknown>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: upc.genweb.objectiusCG\n"
+
+#. Default: "Correunotificacions"
+#: content/Activitat.py
+msgid "objectiusCG_label_correuNotificacions"
+msgstr ""
+
+#. Default: "Correurcg"
+#: content/Activitat.py
+msgid "objectiusCG_label_correuRCG"
+msgstr ""
+
+#. Default: "Correurg"
+#: content/Accio.py
+#: content/Activitat.py
+msgid "objectiusCG_label_correuRG"
+msgstr ""
+
+#. Default: "Descripcio_act"
+#: content/Activitat.py
+msgid "objectiusCG_label_descripcio_act"
+msgstr ""
+

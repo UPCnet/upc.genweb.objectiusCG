@@ -1,0 +1,88 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="upc.genweb.objectiusCG">
+
+    <include package="plone.app.contentmenu" />
+
+    <browser:page
+        for="..interfaces.IActivitat"
+        name="view"
+        class=".activitat.ActivitatView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.IActivitat"
+        menu="plone_displayviews"
+        title="Activitat view"
+        action="@@view"
+        description="Default representation of a Activitat."
+        />
+
+	<!-- Accio -->
+	<browser:page
+        for="..interfaces.IAccio"
+        name="view"
+        class=".accio.AccionView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.IAccio"
+        menu="plone_displayviews"
+        title="Accio view"
+        action="@@view"
+        description="Default representation of a Accio."
+        />
+
+	<!-- ObjectiuEspecific -->
+	<browser:page
+        for="..interfaces.IObjectiuEspecific"
+        name="view"
+        class=".objectiuEspecific.ObjectiuEspecificView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.IObjectiuEspecific"
+        menu="plone_displayviews"
+        title="Objectiu Especific view"
+        action="@@view"
+        description="Default representation of a ObjectiuEspecific."
+        />
+
+	<!-- ObjectiuGeneral -->
+	<browser:page
+        for="..interfaces.IObjectiuGeneral"
+        name="view"
+        class=".objectiuGeneral.ObjectiuGeneralView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.IObjectiuGeneral"
+        menu="plone_displayviews"
+        title="Objectiu General view"
+        action="@@view"
+        description="Default representation of a ObjectiuGeneral."
+        />
+        
+	<!-- State Report View -->
+	<browser:page
+        for="*"
+	    name="state_report_view"
+        class=".ads.StateReportView"
+	    template="templates/state_report_view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Vista por Estado"
+        action="@@state_report_view"
+        description="List Objects by state"
+        />
+</configure>
+

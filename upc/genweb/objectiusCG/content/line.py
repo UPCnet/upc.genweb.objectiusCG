@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# File: Accio.py
+# File: line.py
 #
 # Copyright (c) 2009 by []
 # Generator: ArchGenXML Version 2.2
@@ -19,8 +19,6 @@ import interfaces
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
-from Products.ATContentTypes.content.folder import ATFolder
-from Products.ATContentTypes.content.folder import ATFolderSchema
 from upc.genweb.objectiusCG.config import *
 
 ##code-section module-header #fill in your manual code here
@@ -28,22 +26,6 @@ from upc.genweb.objectiusCG.config import *
 
 schema = Schema((
 
-    StringField(
-        name='correu_RG',
-        widget=StringField._properties['widget'](
-            label='Correu_rg',
-            label_msgid='objectiusCG_label_correu_RG',
-            i18n_domain='upc.genweb.objectiusCG',
-        ),
-    ),
-    BooleanField('send_rg',
-	default = False,
-	widget=BooleanWidget(
-		label = 'send',
-		description = 'Check this box if want to send an e-mail to Correu_rg',
-		i18n_domain='upc.genweb.objectiusCG',
-	),
-    ),
 
 ),
 )
@@ -51,23 +33,23 @@ schema = Schema((
 ##code-section after-local-schema #fill in your manual code here
 ##/code-section after-local-schema
 
-Accio_schema = ATFolderSchema.copy() + \
+line_schema = BaseSchema.copy() + \
     schema.copy()
 
 ##code-section after-schema #fill in your manual code here
 ##/code-section after-schema
 
-class Accio(ATFolder):
+class line(BaseContent, BrowserDefaultMixin):
     """
     """
     security = ClassSecurityInfo()
 
-    implements(interfaces.IAccio)
+    implements(interfaces.Iline)
 
-    meta_type = 'Accio'
+    meta_type = 'line'
     _at_rename_after_creation = True
 
-    schema = Accio_schema
+    schema = line_schema
 
     ##code-section class-header #fill in your manual code here
     ##/code-section class-header
@@ -75,8 +57,8 @@ class Accio(ATFolder):
     # Methods
 
 
-registerType(Accio, PROJECTNAME)
-# end of class Accio
+registerType(line, PROJECTNAME)
+# end of class line
 
 ##code-section module-footer #fill in your manual code here
 ##/code-section module-footer

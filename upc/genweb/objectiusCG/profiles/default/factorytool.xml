@@ -3,5 +3,8 @@
  <factorytypes>
   <type portal_type="Accio"/>
   <type portal_type="Activitat"/>
+  <type portal_type="line"/>
+  <type portal_type="ObjectiuGeneral"/>
+  <type portal_type="ObjectiuEspecific"/>
  </factorytypes>
 </object>

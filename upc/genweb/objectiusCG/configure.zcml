@@ -11,6 +11,7 @@
 
 
   <!-- ##code-section configure.zcml -->
+  <five:registerPackage package="." initialize=".initialize" /> 
   <!-- ##/code-section configure.zcml -->
 
 </configure>

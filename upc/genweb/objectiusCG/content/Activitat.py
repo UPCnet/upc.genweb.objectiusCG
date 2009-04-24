@@ -28,37 +28,53 @@ from upc.genweb.objectiusCG.config import *
 
 schema = Schema((
 
-    TextField(
-        name='descripcio_act',
-        widget=TextAreaWidget(
-            label='Descripcio_act',
-            label_msgid='objectiusCG_label_descripcio_act',
+    StringField(
+        name='correu_RG',
+        widget=StringField._properties['widget'](
+            label='Correu_rg',
+            label_msgid='objectiusCG_label_correu_RG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
     ),
-    LinesField(
-        name='correuRG',
-        widget=LinesField._properties['widget'](
-            label='Correurg',
-            label_msgid='objectiusCG_label_correuRG',
+    BooleanField('send_rg',
+	default = False,
+	widget=BooleanWidget(
+		label = 'send',
+		description = 'Check this box if want to send an e-mail to Correu_rg',
+		i18n_domain='upc.genweb.objectiusCG',
+	),
+    ),
+    StringField(
+        name='correu_RCG',
+        widget=StringField._properties['widget'](
+            label='Correu_rcg',
+            label_msgid='objectiusCG_label_correu_RCG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
     ),
-    LinesField(
-        name='correuRCG',
-        widget=LinesField._properties['widget'](
-            label='Correurcg',
-            label_msgid='objectiusCG_label_correuRCG',
+    BooleanField('send_rcg',
+	default = False,
+	widget=BooleanWidget(
+		label = 'send',
+		description = 'Check this box if want to send an e-mail to Correu_rcg',
+		i18n_domain='upc.genweb.objectiusCG',
+	),
+    ),
+    StringField(
+        name='correu_Notificacions',
+        widget=StringField._properties['widget'](
+            label='Correu_notificacions',
+            label_msgid='objectiusCG_label_correu_Notificacions',
             i18n_domain='upc.genweb.objectiusCG',
         ),
     ),
-    LinesField(
-        name='correuNotificacions',
-        widget=LinesField._properties['widget'](
-            label='Correunotificacions',
-            label_msgid='objectiusCG_label_correuNotificacions',
-            i18n_domain='upc.genweb.objectiusCG',
-        ),
+    BooleanField('send_notificacions',
+	default = False,
+	widget=BooleanWidget(
+		label = 'send',
+		description = 'Check this box if want to send an e-mail to Correu_notificacions',
+		i18n_domain='upc.genweb.objectiusCG',
+	),
     ),
 
 ),
@@ -70,7 +86,16 @@ schema = Schema((
 Activitat_schema = ATDocumentSchema.copy() + \
     schema.copy()
 
+Activitat_schema['text'].widget.visible={'edit':'invisible', 'view':'invisible'}
+
+
 ##code-section after-schema #fill in your manual code here
+
+#atdocmodified = ATDocumentSchemacopy.copy()
+#Activitat_schema = atdocmodified + \
+#   schema.copy()
+
+
 ##/code-section after-schema
 
 class Activitat(ATDocument):

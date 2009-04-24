@@ -5,6 +5,12 @@
          meta_type="Factory-based Type Information with dynamic views"/>
  <object name="Activitat"
          meta_type="Factory-based Type Information with dynamic views"/>
+ <object name="line"
+         meta_type="Factory-based Type Information with dynamic views"/>
+ <object name="ObjectiuGeneral"
+         meta_type="Factory-based Type Information with dynamic views"/>
+ <object name="ObjectiuEspecific"
+         meta_type="Factory-based Type Information with dynamic views"/>
  <!-- ##code-section TYPES -->
  <!-- ##/code-section TYPES -->
 </object>

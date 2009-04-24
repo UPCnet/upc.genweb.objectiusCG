@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# File: Accio.py
+# File: ObjectiuEspecific.py
 #
 # Copyright (c) 2009 by []
 # Generator: ArchGenXML Version 2.2
@@ -28,22 +28,6 @@ from upc.genweb.objectiusCG.config import *
 
 schema = Schema((
 
-    StringField(
-        name='correu_RG',
-        widget=StringField._properties['widget'](
-            label='Correu_rg',
-            label_msgid='objectiusCG_label_correu_RG',
-            i18n_domain='upc.genweb.objectiusCG',
-        ),
-    ),
-    BooleanField('send_rg',
-	default = False,
-	widget=BooleanWidget(
-		label = 'send',
-		description = 'Check this box if want to send an e-mail to Correu_rg',
-		i18n_domain='upc.genweb.objectiusCG',
-	),
-    ),
 
 ),
 )
@@ -51,23 +35,23 @@ schema = Schema((
 ##code-section after-local-schema #fill in your manual code here
 ##/code-section after-local-schema
 
-Accio_schema = ATFolderSchema.copy() + \
+ObjectiuEspecific_schema = ATFolderSchema.copy() + \
     schema.copy()
 
 ##code-section after-schema #fill in your manual code here
 ##/code-section after-schema
 
-class Accio(ATFolder):
+class ObjectiuEspecific(ATFolder):
     """
     """
     security = ClassSecurityInfo()
 
-    implements(interfaces.IAccio)
+    implements(interfaces.IObjectiuEspecific)
 
-    meta_type = 'Accio'
+    meta_type = 'ObjectiuEspecific'
     _at_rename_after_creation = True
 
-    schema = Accio_schema
+    schema = ObjectiuEspecific_schema
 
     ##code-section class-header #fill in your manual code here
     ##/code-section class-header
@@ -75,8 +59,8 @@ class Accio(ATFolder):
     # Methods
 
 
-registerType(Accio, PROJECTNAME)
-# end of class Accio
+registerType(ObjectiuEspecific, PROJECTNAME)
+# end of class ObjectiuEspecific
 
 ##code-section module-footer #fill in your manual code here
 ##/code-section module-footer

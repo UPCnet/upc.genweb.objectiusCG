@@ -35,10 +35,16 @@ setDefaultRoles(DEFAULT_ADD_CONTENT_PERMISSION, ('Manager', 'Owner', 'Contributo
 ADD_CONTENT_PERMISSIONS = {
     'Accio': 'objectiusCG: Add Accio',
     'Activitat': 'objectiusCG: Add Activitat',
+    'line': 'objectiusCG: Add line',
+    'ObjectiuGeneral': 'objectiusCG: Add ObjectiuGeneral',
+    'ObjectiuEspecific': 'objectiusCG: Add ObjectiuEspecific',
 }
 
 setDefaultRoles('objectiusCG: Add Accio', ('Manager','Owner'))
 setDefaultRoles('objectiusCG: Add Activitat', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add line', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add ObjectiuGeneral', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add ObjectiuEspecific', ('Manager','Owner'))
 
 product_globals = globals()
 

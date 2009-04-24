@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<object name="Activitat"
+<object name="line"
         meta_type="Factory-based Type Information with dynamic views"
         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         i18n:domain="plone">
    
- <property name="title" i18n:translate="">Activitat</property>
+ <property name="title" i18n:translate="">line</property>
  <property name="description" i18n:translate=""></property>
- <property name="content_icon">Activitat.gif</property>
- <property name="content_meta_type">Activitat</property>
+ <property name="content_icon">line.gif</property>
+ <property name="content_meta_type">line</property>
  <property name="product">upc.genweb.objectiusCG</property>
- <property name="factory">addActivitat</property>
+ <property name="factory">addline</property>
  <property name="immediate_view">base_view</property>
- <property name="global_allow">False</property>
+ <property name="global_allow">True</property>
  <property name="filter_content_types">False</property>
  <property name="allowed_content_types">
  </property>

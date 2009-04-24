@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master">
+
+  <head><title></title></head>
+
+  <body>
+
+    <div metal:fill-slot="main">
+
+      <metal:main_macro define-macro="main">
+
+        <metal:header_macro define-macro="header">
+          <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+          </div>
+          <h1 tal:content="title_string | here/title_or_id" />
+          <tal:has_document_byline tal:condition="exists:here/document_byline">
+            <div metal:use-macro="here/document_byline/macros/byline">
+              Get the byline - contains details about author and modification date.
+            </div>
+          </tal:has_document_byline>
+        </metal:header_macro>
+
+		  <tal:block tal:define="items view/getActivitatAcquisitionChain">
+		    <p>
+		     <form action="" name="state_change" method="post"
+		     	   tal:attributes="action here/absolute_url">
+		     	   <input type="submit" name="state" value="No Iniciat" />&nbsp;
+		     	   <input type="submit" name="state" value="Iniciat" />&nbsp;
+		     	   <input type="submit" name="state" value="Finalizat" />&nbsp;
+		     	   <input type="submit" name="state" value="Completa" />&nbsp;
+		     	   <input type="submit" name="objectiu_general" value="Por Objectiu General" />&nbsp;
+		     </form>
+		    </p>
+          	<p>hay <b tal:content="python:len(items)" /> activitats</p>
+          	<br/>
+          	<ul tal:condition="python: 'objectiu_general' not in request">
+          		<li tal:repeat="item items">
+          			<tal:block content="python:item['obj_gen'].title" />, 
+          			<tal:block content="python:item['obj_esp'].title" />,  
+          			<tal:block content="python:item['accio'].title" />, 
+          			<tal:block content="python:item['activitat'].title" />.
+          			 Grau assoliment:[<tal:block content="python:item['activitat'].grau_assoliment" />%]
+          		</li>
+          	</ul>
+          </tal:block>
+          
+          
+          <ol 	tal:condition="python: 'objectiu_general' in request"
+          		tal:define="obj_gens python:view.getResults('ObjectiuGeneral')">
+          
+          	<li tal:repeat="gen obj_gens">
+          	 <tal:block tal:define="obj gen/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	 
+          	 	<ol type="" tal:condition="obj_esps" tal:define="obj_esps python:view.getResults('ObjectiuEspecific', gen.id)">
+          	 		<li tal:repeat="esp obj_esps">
+          	 			<tal:block tal:define="obj esp/getObject"> <a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	 				
+          	 				<ol tal:condition="obj_accs" tal:define="ids_url python:'%s/%s' %(gen.id,esp.id);obj_accs python:view.getResults('Accio', ids_url)">
+          	 					<li tal:repeat="acc obj_accs">
+          	 						<tal:block tal:define="obj acc/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	 				
+          	 							<ol tal:condition="obj_acts" tal:define="ids_url python:'%s/%s/%s' %(gen.id,esp.id,acc.id);obj_acts python:view.getResults('Activitat', ids_url)">
+          	 								<li tal:repeat="act obj_acts">
+          	 									<tal:block tal:define="obj act/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	 				
+          	 							
+          									</li>
+          	 							</ol>
+          						</li>
+          	 				</ol>
+          			</li>
+          	 	</ol>
+          	 	
+          	</li>
+          
+          </ol>
+          
+          
+        <metal:body_macro metal:define-macro="body"
+                          tal:define="field_macro field_macro | here/widgets/field/macros/view;"
+                          tal:repeat="field python:here.Schema().filterFields(isMetadata=0)">
+          <tal:if_visible define="mode string:view;
+                                  visState python:field.widget.isVisible(here, mode);
+                                  visCondition python:field.widget.testCondition(context.aq_inner.aq_parent, portal, context);"
+                          condition="python:visState == 'visible' and visCondition">
+            <metal:use_field use-macro="field_macro" />
+          </tal:if_visible>
+          
+          
+          
+        </metal:body_macro>
+
+        <metal:folderlisting_macro metal:define-macro="folderlisting"
+                                   tal:define="fl_macro here/folder_listing/macros/listing | nothing;
+                                               folderish here/isPrincipiaFolderish | nothing;">
+            <tal:if_folderlisting condition="python:folderish and fl_macro">
+                <metal:use_macro use-macro="fl_macro" />
+            </tal:if_folderlisting>
+        </metal:folderlisting_macro>
+
+        <metal:footer_macro define-macro="footer">
+        </metal:footer_macro>
+
+      </metal:main_macro>
+
+    </div>
+
+  </body>
+
+</html>
+

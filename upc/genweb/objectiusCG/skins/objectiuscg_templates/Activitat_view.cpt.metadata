@@ -1,0 +1,12 @@
+[default]
+title = Enviament de missatges
+
+[validators]
+validators..send_mail_rg = 
+validators..send_mail_rcg = 
+
+[actions]
+action.success = traverse_to_action:string:view
+action.success..send_mail_rg = traverse_to:string:do_send_mail_rgestio
+action.success..send_mail_rcg = traverse_to:string:do_send_mail_rconsellg
+action.failure = traverse_to_action:string:Activitat_view

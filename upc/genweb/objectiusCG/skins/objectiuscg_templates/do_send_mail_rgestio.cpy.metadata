@@ -1,0 +1,6 @@
+[default]
+title=Enviament de missatge
+proxy = AdminCiber
+
+[actions]
+action.success = redirect_to:string:view

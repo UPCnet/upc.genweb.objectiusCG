@@ -6,14 +6,14 @@
     <include package="plone.app.contentmenu" />
 
     <browser:page
-        for="..interfaces.IActivitat"
+        for="..interfaces.IActivitatCG"
         name="view"
-        class=".activitat.ActivitatView"
+        class=".activitatCG.ActivitatView"
         permission="zope2.View"
         />
 
     <browser:menuItem
-        for="..interfaces.IActivitat"
+        for="..interfaces.IActivitatCG"
         menu="plone_displayviews"
         title="Activitat view"
         action="@@view"
@@ -22,14 +22,14 @@
 
 	<!-- Accio -->
 	<browser:page
-        for="..interfaces.IAccio"
+        for="..interfaces.IAccioCG"
         name="view"
-        class=".accio.AccionView"
+        class=".accioCG.AccioView"
         permission="zope2.View"
         />
 
     <browser:menuItem
-        for="..interfaces.IAccio"
+        for="..interfaces.IAccioCG"
         menu="plone_displayviews"
         title="Accio view"
         action="@@view"
@@ -38,14 +38,14 @@
 
 	<!-- ObjectiuEspecific -->
 	<browser:page
-        for="..interfaces.IObjectiuEspecific"
+        for="..interfaces.IObjectiuEspecificCG"
         name="view"
-        class=".objectiuEspecific.ObjectiuEspecificView"
+        class=".objectiuEspecificCG.ObjectiuEspecificView"
         permission="zope2.View"
         />
 
     <browser:menuItem
-        for="..interfaces.IObjectiuEspecific"
+        for="..interfaces.IObjectiuEspecificCG"
         menu="plone_displayviews"
         title="Objectiu Especific view"
         action="@@view"
@@ -54,14 +54,14 @@
 
 	<!-- ObjectiuGeneral -->
 	<browser:page
-        for="..interfaces.IObjectiuGeneral"
+        for="..interfaces.IObjectiuGeneralCG"
         name="view"
-        class=".objectiuGeneral.ObjectiuGeneralView"
+        class=".objectiuGeneralCG.ObjectiuGeneralView"
         permission="zope2.View"
         />
 
     <browser:menuItem
-        for="..interfaces.IObjectiuGeneral"
+        for="..interfaces.IObjectiuGeneralCG"
         menu="plone_displayviews"
         title="Objectiu General view"
         action="@@view"
@@ -71,17 +71,16 @@
 	<!-- State Report View -->
 	<browser:page
         for="*"
-	    name="state_report_view"
-        class=".ads.StateReportView"
-	    template="templates/state_report_view.pt"
-        permission="zope2.View"
+	    name="state_report_view_cg"
+            class=".report_view.StateReportView"
+            permission="zope2.View"
         />
 
     <browser:menuItem
         for="*"
         menu="plone_displayviews"
-        title="Vista por Estado"
-        action="@@state_report_view"
+        title="Vista per estat"
+        action="@@state_report_view_cg"
         description="List Objects by state"
         />
 </configure>

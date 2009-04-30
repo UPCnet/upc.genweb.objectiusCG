@@ -44,7 +44,7 @@ class line(BaseContent, BrowserDefaultMixin):
     """
     security = ClassSecurityInfo()
 
-    implements(interfaces.Iline)
+    implements(interfaces.IlineCG)
 
     meta_type = 'line'
     _at_rename_after_creation = True

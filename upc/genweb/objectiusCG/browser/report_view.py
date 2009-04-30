@@ -6,8 +6,8 @@ from Acquisition import aq_inner, aq_parent
 
 class StateReportView(BrowserView):
     
-    render = ViewPageTemplateFile("templates/state_report_view.pt")
-    objectiusCG_portal_types = ('ObjectiuGeneral','ObjectiuEspecific','Accio','Activitat',)
+    __call__ = ViewPageTemplateFile("templates/state_report_viewCG.pt")
+    objectiusCG_portal_types = ('ObjectiuGeneralCG','ObjectiuEspecificCG','AccioCG','ActivitatCG',)
     
     def __init__(self,context, request):
         self.context = context
@@ -26,7 +26,7 @@ class StateReportView(BrowserView):
         contentFilter={}
         
         cur_path = '/'.join(self.context.getPhysicalPath())
-        contentFilter['portal_type']="Activitat"
+        contentFilter['portal_type']="ActivitatCG"
         if state is not None:
             contentFilter['review_state']=[state]
         if self.request.get('state'):
@@ -48,8 +48,8 @@ class StateReportView(BrowserView):
         data = []
         for activitat in activitats:
             obj = activitat.getObject()
-            accion = aq_parent(aq_inner(obj))
-            obj_esp = aq_parent(aq_inner(accion))
+            accio = aq_parent(aq_inner(obj))
+            obj_esp = aq_parent(aq_inner(accio))
             obj_gen = aq_parent(aq_inner(obj_esp))
             data.append({'obj_gen':obj_gen, 'obj_esp':obj_esp, 'accio':accio, 'activitat':obj})
             

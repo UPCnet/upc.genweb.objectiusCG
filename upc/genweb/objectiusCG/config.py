@@ -33,18 +33,16 @@ PROJECTNAME = "upc.genweb.objectiusCG"
 DEFAULT_ADD_CONTENT_PERMISSION = "Add portal content"
 setDefaultRoles(DEFAULT_ADD_CONTENT_PERMISSION, ('Manager', 'Owner', 'Contributor'))
 ADD_CONTENT_PERMISSIONS = {
-    'Accio': 'objectiusCG: Add Accio',
-    'Activitat': 'objectiusCG: Add Activitat',
-    'line': 'objectiusCG: Add line',
-    'ObjectiuGeneral': 'objectiusCG: Add ObjectiuGeneral',
-    'ObjectiuEspecific': 'objectiusCG: Add ObjectiuEspecific',
+    'ActivitatCG': 'objectiusCG: Add ActivitatCG',
+    'ObjectiuGeneralCG': 'objectiusCG: Add ObjectiuGeneralCG',
+    'ObjectiuEspecificCG': 'objectiusCG: Add ObjectiuEspecificCG',
+    'AccioCG': 'objectiusCG: Add AccioCG',
 }
 
-setDefaultRoles('objectiusCG: Add Accio', ('Manager','Owner'))
-setDefaultRoles('objectiusCG: Add Activitat', ('Manager','Owner'))
-setDefaultRoles('objectiusCG: Add line', ('Manager','Owner'))
-setDefaultRoles('objectiusCG: Add ObjectiuGeneral', ('Manager','Owner'))
-setDefaultRoles('objectiusCG: Add ObjectiuEspecific', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add ActivitatCG', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add ObjectiuGeneralCG', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add ObjectiuEspecificCG', ('Manager','Owner'))
+setDefaultRoles('objectiusCG: Add AccioCG', ('Manager','Owner'))
 
 product_globals = globals()
 

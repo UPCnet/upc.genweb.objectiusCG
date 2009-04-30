@@ -44,19 +44,18 @@
           			<tal:block content="python:item['obj_esp'].title" />,  
           			<tal:block content="python:item['accio'].title" />, 
           			<tal:block content="python:item['activitat'].title" />.
-          			 Grau assoliment:[<tal:block content="python:item['activitat'].grau_assoliment" />%]
+          			 
           		</li>
           	</ul>
           </tal:block>
           
           
-          <ol 	tal:condition="python: 'objectiu_general' in request"
-          		tal:define="obj_gens python:view.getResults('ObjectiuGeneral')">
+          <ol tal:condition="python: 'objectiu_general' in request" tal:define="obj_gens python:view.getResults('ObjectiuGeneral')">
           
           	<li tal:repeat="gen obj_gens">
           	 <tal:block tal:define="obj gen/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
           	 
-          	 	<ol type="" tal:condition="obj_esps" tal:define="obj_esps python:view.getResults('ObjectiuEspecific', gen.id)">
+          	 	<ol tal:condition="obj_esps" tal:define="obj_esps python:view.getResults('ObjectiuEspecific', gen.id)">
           	 		<li tal:repeat="esp obj_esps">
           	 			<tal:block tal:define="obj esp/getObject"> <a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
           	 				
@@ -90,9 +89,7 @@
                           condition="python:visState == 'visible' and visCondition">
             <metal:use_field use-macro="field_macro" />
           </tal:if_visible>
-          
-          
-          
+                 
         </metal:body_macro>
 
         <metal:folderlisting_macro metal:define-macro="folderlisting"

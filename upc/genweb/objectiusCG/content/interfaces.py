@@ -5,24 +5,20 @@ from zope.interface import Interface
 ##code-section HEAD
 ##/code-section HEAD
 
-class IAccio(Interface):
-    """Marker interface for .Accio.Accio
+class IActivitatCG(Interface):
+    """Marker interface for .ActivitatCG.ActivitatCG
     """
 
-class IActivitat(Interface):
-    """Marker interface for .Activitat.Activitat
+class IObjectiuGeneralCG(Interface):
+    """Marker interface for .ObjectiuGeneralCG.ObjectiuGeneralCG
     """
 
-class Iline(Interface):
-    """Marker interface for .line.line
+class IObjectiuEspecificCG(Interface):
+    """Marker interface for .ObjectiuEspecificCG.ObjectiuEspecificCG
     """
 
-class IObjectiuGeneral(Interface):
-    """Marker interface for .ObjectiuGeneral.ObjectiuGeneral
-    """
-
-class IObjectiuEspecific(Interface):
-    """Marker interface for .ObjectiuEspecific.ObjectiuEspecific
+class IAccioCG(Interface):
+    """Marker interface for .AccioCG.AccioCG
     """
 
 ##code-section FOOT

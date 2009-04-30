@@ -16,6 +16,13 @@ msgstr ""
 "Preferred-Encodings: latin1 utf-8\n"
 "Domain: upc.genweb.objectiusCG\n"
 
+#. Default: "Descripcio"
+#: content/ObjectiuGeneralCG.py
+#: content/ObjectiuEspecificCG.py
+#: content/AccioCG.py
+msgid "objectiusCG_label_Descripcio"
+msgstr ""
+
 #. Default: "Confirma_rg"
 #: content/Activitat.py
 msgid "objectiusCG_label_confirma_RG"
@@ -39,17 +46,20 @@ msgstr ""
 
 #. Default: "Correu_notificacions"
 #: content/Activitat.py
+#: content/ActivitatCG.py
 msgid "objectiusCG_label_correu_Notificacions"
 msgstr ""
 
 #. Default: "Correu_rcg"
 #: content/Activitat.py
+#: content/ActivitatCG.py
 msgid "objectiusCG_label_correu_RCG"
 msgstr ""
 
 #. Default: "Correu_rg"
 #: content/Activitat.py
 #: content/Accio.py
+#: content/ActivitatCG.py
 msgid "objectiusCG_label_correu_RG"
 msgstr ""
 
@@ -61,5 +71,12 @@ msgstr ""
 #. Default: "Prova"
 #: content/Activitat.py
 msgid "objectiusCG_label_prova"
+msgstr ""
+
+#. Default: "Title"
+#: content/ObjectiuGeneralCG.py
+#: content/ActivitatCG.py
+#: content/ObjectiuEspecificCG.py
+msgid "objectiusCG_label_title"
 msgstr ""
 

@@ -36,11 +36,10 @@ __docformat__ = 'plaintext'
 # Additional
 
 # Classes
-import Accio
-import Activitat
-import line
-import ObjectiuGeneral
-import ObjectiuEspecific
+import ActivitatCG
+import ObjectiuGeneralCG
+import ObjectiuEspecificCG
+import AccioCG
 
 ##code-section init-module-footer #fill in your manual code here
 ##/code-section init-module-footer

@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <object name="portal_factory" meta_type="Plone Factory Tool">
  <factorytypes>
-  <type portal_type="Accio"/>
-  <type portal_type="Activitat"/>
-  <type portal_type="line"/>
-  <type portal_type="ObjectiuGeneral"/>
-  <type portal_type="ObjectiuEspecific"/>
+  <type portal_type="ActivitatCG"/>
+  <type portal_type="ObjectiuGeneralCG"/>
+  <type portal_type="ObjectiuEspecificCG"/>
+  <type portal_type="AccioCG"/>
  </factorytypes>
 </object>

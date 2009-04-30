@@ -6,7 +6,7 @@
     <!-- configure your content components here -->
 
     <!-- -*- extra stuff goes here -*- -->
-    <class class=".Activitat.Activitat">
+    <class class=".ActivitatCG.ActivitatCG">
 
         <require
             permission="zope2.View"
@@ -20,7 +20,7 @@
 
     </class>
 
-    <class class=".Accio.Accio">
+    <class class=".AccioCG.AccioCG">
 
         <require
             permission="zope2.View"
@@ -34,7 +34,7 @@
 
     </class>
 
-    <class class=".ObjectiuEspecific.ObjectiuEspecific">
+    <class class=".ObjectiuEspecificCG.ObjectiuEspecificCG">
 
         <require
             permission="zope2.View"
@@ -48,7 +48,7 @@
 
     </class>
 
-    <class class=".ObjectiuGeneral.ObjectiuGeneral">
+    <class class=".ObjectiuGeneralCG.ObjectiuGeneralCG">
 
         <require
             permission="zope2.View"

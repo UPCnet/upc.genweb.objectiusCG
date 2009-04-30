@@ -5,6 +5,7 @@
 
     <include package="plone.app.contentmenu" />
 
+    <!-- Acctivitat -->
     <browser:page
         for="..interfaces.IActivitatCG"
         name="view"

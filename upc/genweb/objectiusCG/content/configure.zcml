@@ -1,0 +1,65 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="upc.genweb.objectiusCG">
+
+    <!-- configure your content components here -->
+
+    <!-- -*- extra stuff goes here -*- -->
+    <class class=".Activitat.Activitat">
+
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IActivitatCG"
+            />
+
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IActivitatCG"
+            />
+
+    </class>
+
+    <class class=".Accio.Accio">
+
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IAccioCG"
+            />
+
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IAccioCG"
+            />
+
+    </class>
+
+    <class class=".ObjectiuEspecific.ObjectiuEspecific">
+
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IObjectiuEspecificCG"
+            />
+
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IObjectiuEspecificCG"
+            />
+
+    </class>
+
+    <class class=".ObjectiuGeneral.ObjectiuGeneral">
+
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IObjectiuGeneralCG"
+            />
+
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IObjectiuGeneralCG"
+            />
+
+    </class>
+</configure>
+

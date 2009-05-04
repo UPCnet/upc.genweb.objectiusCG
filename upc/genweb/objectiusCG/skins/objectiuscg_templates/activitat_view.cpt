@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<div metal:fill-slot="main" >
+    <tal:main-macro metal:define-macro="main" >
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1>Activitat</h1>
+
+        <h2 class="documentFirstHeading"> 
+            <metal:field use-macro="python:here.widget('title', mode='view')">
+            </metal:field>
+        </h2>
+	
+<form tal:condition="view" name="activitat" method="POST" tal:attributes="action string:$here_url/activitat_view" enctype="multipart/form-data">
+
+
+  <div class="visualClear"><!-- --></div>        
+	        
+	        
+  <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
+    <span></span>
+
+    <label style="font-size:1.3em;" for="texto">Notificacions</label>
+          
+    <div class="formHelp" id="texto_help">Enviament de missatges als responsables</div>
+    
+    <div class="fieldErrorBox"></div>
+    <br/>
+
+    <textarea class="blurrable firstToFocus" rows="15"
+            name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
+...................
+...................
+...................
+    </textarea>
+
+    <input type="hidden" name="texto_text_format" value="text/html" />
+
+  </div>
+
+	<input type="hidden"
+                 name="form.submitted"
+                 value="1"
+                 />
+
+            
+  <input class="context"
+         tabindex=""
+         type="submit"
+         name="form.button.send_mail_rg"
+         value="Responsable de Gestio"
+         tal:attributes="tabindex tabindex/next"
+  />             	            
+
+            
+  <input class="context"
+         tabindex=""
+         type="submit"
+         name="form.button.send_mail_rcg"
+         value="Responsable del Consell de Govern"
+         tal:attributes="tabindex tabindex/next"
+  />             	            
+
+
+  <div class="visualClear"><!-- --></div> 
+       
+</form>
+
+<div tal:replace="structure provider:plone.abovecontentbody" />
+        
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+
+</div>
+
+</body>
+</html>
+

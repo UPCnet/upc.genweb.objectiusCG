@@ -11,7 +11,7 @@
 
     <div metal:fill-slot="main">
 
-      <metal:main_macro define-macro="main">
+      <metal:main_macro define-macro="main">hello world
 
         <metal:header_macro define-macro="header">
           <div metal:use-macro="here/document_actions/macros/document_actions">

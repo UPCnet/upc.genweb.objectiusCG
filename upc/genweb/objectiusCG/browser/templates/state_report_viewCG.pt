@@ -50,7 +50,7 @@
           </tal:block>
           
           
-          <ul tal:condition="python: 'objectiu_general' in request" tal:define="obj_gens python:view.getResults('ObjectiuGeneralCG')">
+          <ul class="estilo_ul_cg" tal:condition="python: 'objectiu_general' in request" tal:define="obj_gens python:view.getResults('ObjectiuGeneralCG')">
             <li tal:repeat="gen obj_gens">
           	 <tal:block tal:define="obj gen/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
           	 

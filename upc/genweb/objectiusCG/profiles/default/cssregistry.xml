@@ -14,5 +14,11 @@
  -->
 
  <!-- ##code-section cssregistry.xml -->
+ <stylesheet title=""
+    id="++resource++upc.genweb.objectiusCG.stylesheets/main_objectiu_cg.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+
  <!-- ##/code-section cssregistry.xml -->
 </object>

@@ -5,6 +5,13 @@
 
     <include package="plone.app.contentmenu" />
 
+    <!-- Resource directory for stylesheets -->
+    <browser:resourceDirectory
+        name="upc.genweb.objectiusCG.stylesheets"
+        directory="stylesheets"
+        />
+
+
     <!-- Acctivitat -->
     <browser:page
         for="..interfaces.IActivitatCG"

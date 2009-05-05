@@ -21,14 +21,12 @@
 	
 <form tal:condition="view" name="activitat" method="POST" tal:attributes="action string:$here_url/activitat_view" enctype="multipart/form-data">
 
-
   <div class="visualClear"><!-- --></div>        
-	        
 	        
   <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
     <span></span>
 
-    <label style="font-size:1.3em;" for="texto">Notificacions</label>
+    <label style="font-size:1.3em;" for="texto">Notificació:</label>
           
     <div class="formHelp" id="texto_help">Enviament de missatges als responsables</div>
     
@@ -56,7 +54,7 @@
          tabindex=""
          type="submit"
          name="form.button.send_mail_rg"
-         value="Responsable de Gestio"
+         value="Adreça de correu del Responsable de Gestió"
          tal:attributes="tabindex tabindex/next"
   />             	            
 
@@ -65,7 +63,7 @@
          tabindex=""
          type="submit"
          name="form.button.send_mail_rcg"
-         value="Responsable del Consell de Govern"
+         value="Adreça de correu del Responsable del Consell de Govern"
          tal:attributes="tabindex tabindex/next"
   />             	            
 

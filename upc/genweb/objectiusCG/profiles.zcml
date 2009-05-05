@@ -6,9 +6,6 @@
   <include package="Products.GenericSetup" file="meta.zcml" />
 
   <!-- ##code-section profiles.zcml-top #fill in your manual code here -->
-    <!-- Include the sub-packages that use their own configure.zcml files. -->
-    <include package=".browser" />
-    <include package=".content" />
   <!-- ##/code-section profiles.zcml-top -->
 
   <genericsetup:registerProfile

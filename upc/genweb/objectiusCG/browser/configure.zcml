@@ -12,7 +12,7 @@
         />
 
 
-    <!-- Acctivitat -->
+    <!-- Activitat -->
     <browser:page
         for="..interfaces.IActivitatCG"
         name="view"
@@ -25,7 +25,7 @@
         menu="plone_displayviews"
         title="Activitat view"
         action="@@view"
-        description="Default representation of a Activitat."
+        description="Default representation of an Activitat."
         />
 
 	<!-- Accio -->
@@ -41,7 +41,7 @@
         menu="plone_displayviews"
         title="Accio view"
         action="@@view"
-        description="Default representation of a Accio."
+        description="Default representation of an Accio."
         />
 
 	<!-- ObjectiuEspecific -->
@@ -57,7 +57,7 @@
         menu="plone_displayviews"
         title="Objectiu Especific view"
         action="@@view"
-        description="Default representation of a ObjectiuEspecific."
+        description="Default representation of an ObjectiuEspecific."
         />
 
 	<!-- ObjectiuGeneral -->
@@ -73,7 +73,7 @@
         menu="plone_displayviews"
         title="Objectiu General view"
         action="@@view"
-        description="Default representation of a ObjectiuGeneral."
+        description="Default representation of an ObjectiuGeneral."
         />
         
 	<!-- State Report View -->

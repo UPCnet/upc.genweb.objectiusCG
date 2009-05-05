@@ -29,11 +29,10 @@
 		    <p>
 		     <form action="" name="state_change" method="post"
 		     	   tal:attributes="action here/absolute_url">
-		     	   <input type="submit" name="state" value="No Iniciat" />&nbsp;
-		     	   <input type="submit" name="state" value="Iniciat" />&nbsp;
-		     	   <input type="submit" name="state" value="Finalizat" />&nbsp;
-		     	   <input type="submit" name="state" value="Completa" />&nbsp;
-		     	   <input type="submit" name="objectiu_general" value="Por Objectiu General" />&nbsp;
+		     	   <input type="submit" name="state" value="No Iniciada" />&nbsp;
+		     	   <input type="submit" name="state" value="Iniciada" />&nbsp;
+		     	   <input type="submit" name="state" value="Finalizada" />&nbsp;
+		     	   <input type="submit" name="objectiu_general" value="Per Objectiu General" />&nbsp;
 		     </form>
 		    </p>
           	<p>hay <b tal:content="python:len(items)" /> activitats</p>

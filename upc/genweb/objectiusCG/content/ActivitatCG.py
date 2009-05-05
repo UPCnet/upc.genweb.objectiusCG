@@ -40,7 +40,7 @@ schema = Schema((
     StringField(
         name='correu_RG',
         widget=StringField._properties['widget'](
-            label='Correu_rg',
+            label="Adreca de correu del Responsable de Gestio",
             label_msgid='objectiusCG_label_correu_RG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
@@ -49,7 +49,7 @@ schema = Schema((
     StringField(
         name='correu_RCG',
         widget=StringField._properties['widget'](
-            label='Correu_rcg',
+            label="Adreca de correu del Responsable del Consell de Govern",
             label_msgid='objectiusCG_label_correu_RCG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
@@ -58,7 +58,7 @@ schema = Schema((
     StringField(
         name='correu_Notificacions',
         widget=StringField._properties['widget'](
-            label='Correu_notificacions',
+            label="Adreca de correu per notificacions",
             label_msgid='objectiusCG_label_correu_Notificacions',
             i18n_domain='upc.genweb.objectiusCG',
         ),

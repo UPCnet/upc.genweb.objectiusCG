@@ -38,7 +38,7 @@ schema = Schema((
     StringField(
         name='correu_RG',
         widget=StringField._properties['widget'](
-            label='Correu_rg',
+            label="Adreca de correu del Responsable de Gestio",
             label_msgid='objectiusCG_label_correu_RG',
             i18n_domain='upc.genweb.objectiusCG',
         ),

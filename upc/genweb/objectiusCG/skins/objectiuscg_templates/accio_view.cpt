@@ -12,7 +12,7 @@
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-        <h1>Accio</h1>
+        <h1>Acció</h1>
 
         <h2 class="documentFirstHeading"> 
             <metal:field use-macro="python:here.widget('title', mode='view')">
@@ -26,9 +26,9 @@
   <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
     <span></span>
 
-    <label style="font-size:1.3em;" for="texto">Notificacio</label>
+    <label style="font-size:1.3em;" for="texto">Notificació:</label>
           
-    <div class="formHelp" id="texto_help">Enviament de missatges als responsables</div>
+    <div class="formHelp" id="texto_help">Enviament de missatge al responsable</div>
     
     <div class="fieldErrorBox"></div>
     <br/>
@@ -54,7 +54,7 @@
          tabindex=""
          type="submit"
          name="form.button.send_mail_rg"
-         value="Responsable de Gestio"
+         value="Adreça de correu del Responsable de Gestió"
          tal:attributes="tabindex tabindex/next"
   />             	            
 

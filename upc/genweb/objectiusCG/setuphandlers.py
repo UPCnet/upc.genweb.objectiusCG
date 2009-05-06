@@ -21,6 +21,7 @@ import os
 from Products.CMFCore.utils import getToolByName
 import transaction
 ##code-section HEAD
+from Products.CMFPlone.utils import _createObjectByType
 ##/code-section HEAD
 
 def isNotobjectiusCGProfile(context):
@@ -41,11 +42,11 @@ def postInstall(context):
     if isNotobjectiusCGProfile(context): return
     site = context.getSite()
 
-    crearObjecte(site,'PSIO','Large Plone Folder','Plans de Suport a la Igualtat dOportunitats','Carpeta arrel',exclude=True)
+    crearObjecte(site,'PSIO','Folder','Plans de Suport a la Igualtat dOportunitats','Carpeta arrel',exclude=True)
 
-    crearObjecte(site.PSIO,'GENERE','Large Plone Folder','Genere','Carpeta de Genere',exclude=True)
+    crearObjecte(site.PSIO,'GENERE','Folder','Genere','Carpeta de Genere',exclude=True)
 
-    crearObjecte(site.PSIO,'DISCAPACITATS','Large Plone Folder','Discapacitats','Carpeta de Discapacitats',exclude=True)
+    crearObjecte(site.PSIO,'DISCAPACITATS','Folder','Discapacitats','Carpeta de Discapacitats',exclude=True)
 
 
 

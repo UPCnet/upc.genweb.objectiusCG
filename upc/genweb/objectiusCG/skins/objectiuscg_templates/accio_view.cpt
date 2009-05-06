@@ -1,76 +1,101 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xml:lang="en"
+      lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
-<body>
 
-<div metal:fill-slot="main" >
-    <tal:main-macro metal:define-macro="main" >
+    <body>
 
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <div metal:fill-slot="main" >
+            <tal:main-macro metal:define-macro="main" 
+                  tal:define="portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
+                    base_macros here/base/macros;
+                    view_template python:'%s_view' % portal_type;
+                    view_macros python:path('here/%s/macros|nothing' % view_template);
+                    folderlisting_macro view_macros/folderlisting | folderlisting | base_macros/folderlisting;">
 
-        <h1>Acció</h1>
+                <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-        <h2 class="documentFirstHeading"> 
-            <metal:field use-macro="python:here.widget('title', mode='view')">
-            </metal:field>
-        </h2>
-	
-<form tal:condition="view" name="accio" method="POST" tal:attributes="action string:$here_url/accio_view" enctype="multipart/form-data">
+                <h1>Acció:</h1>
 
-  <div class="visualClear"><!-- --></div>        
-	        
-  <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
-    <span></span>
+                <h2 class="documentFirstHeading"> 
+                    <metal:field use-macro="python:here.widget('title', mode='view')">
+                    </metal:field>
+                </h2>
 
-    <label style="font-size:1.3em;" for="texto">Notificació:</label>
-          
-    <div class="formHelp" id="texto_help">Enviament de missatge al responsable</div>
-    
-    <div class="fieldErrorBox"></div>
-    <br/>
 
-    <textarea class="blurrable firstToFocus" rows="15"
-            name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
-...................
-...................
-...................
-    </textarea>
+                <form tal:condition="view" name="accio" method="POST" tal:attributes="action string:$here_url/accio_view" enctype="multipart/form-data">
 
-    <input type="hidden" name="texto_text_format" value="text/html" />
+                    <div class="visualClear"><!-- --></div>        
+	                
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
+                        <span></span>
+                        
 
-  </div>
 
-	<input type="hidden"
-                 name="form.submitted"
-                 value="1"
-                 />
+                    <div class="field ArchetypesField-StringField" id="archetypes-fieldname-correu_RG">
+                                       
+                          <label class="formQuestion"><span>Adreça de correu del Responsable de Gestió</span>:</label>
+                          <br>
+                        
+                            <span class="kssattr-atfieldname-correu_RG kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_RG" tal:content="context/getCorreu_RG">
+                                jorge.novoa@upcnet.es
+                            </span>
+                        
+                    </div>
 
-            
-  <input class="context"
-         tabindex=""
-         type="submit"
-         name="form.button.send_mail_rg"
-         value="Adreça de correu del Responsable de Gestió"
-         tal:attributes="tabindex tabindex/next"
-  />             	            
 
-            
-  <div class="visualClear"><!-- --></div> 
-       
-</form>
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-textmail">
+                        <span></span>
+                        <label class="formQuestion" for="textmail">Text del mail</label>
+                            
+                        <div class="formHelp" id="description_help">Escriu el text que vulguis enviar al Responsable de Gestió:</div>
+                          
+                                                  
+                      
+                        <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
+                        </textarea>
+                       
 
-<div tal:replace="structure provider:plone.abovecontentbody" />
-        
-    <div tal:replace="structure provider:plone.belowcontentbody" />
 
-    </tal:main-macro>
 
-</div>
+	                <input type="hidden"
+                                 name="form.submitted"
+                                 value="1"
+                    />
 
-</body>
+                    <input class="context"
+                        tabindex=""
+                        type="submit"
+                        name="form.button.send_mail_rg"
+                        value="Enviar missatge"
+                        tal:attributes="tabindex tabindex/next"
+                    />             	            
+                    </div>
+
+                    <br/>
+                    <div class="field">
+                    <span></span>
+                    <label for="texto">Llista d'Activitats que pertanyen a aquesta Acció:</label>
+                    <metal:use_body use-macro="folderlisting_macro" />
+                    </div>
+
+
+                    <div class="visualClear"><!-- --></div> 
+               
+                </form>
+
+                <div tal:replace="structure provider:plone.abovecontentbody" />
+                
+                <div tal:replace="structure provider:plone.belowcontentbody" />
+
+            </tal:main-macro>
+
+        </div>
+
+    </body>
 </html>
 

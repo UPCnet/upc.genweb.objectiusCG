@@ -4,7 +4,7 @@
         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         i18n:domain="plone">
    
- <property name="title" i18n:translate="">AccioCG</property>
+ <property name="title" i18n:translate="">Accio</property>
  <property name="description" i18n:translate=""></property>
  <property name="content_icon">AccioCG.gif</property>
  <property name="content_meta_type">AccioCG</property>
@@ -17,12 +17,13 @@
    <element value="ActivitatCG"/>
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">folder_listing</property>
+ <property name="default_view">accio_view</property>
  <property name="view_methods">
   <element value="folder_summary_view"/>
   <element value="folder_tabular_view"/>
   <element value="atct_album_view"/>
   <element value="folder_listing"/>
+  <element value="accio_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <alias from="(Default)" to="(dynamic view)"/>

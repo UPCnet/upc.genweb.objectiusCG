@@ -4,7 +4,7 @@
         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         i18n:domain="plone">
    
- <property name="title" i18n:translate="">ActivitatCG</property>
+ <property name="title" i18n:translate="">Activitat</property>
  <property name="description" i18n:translate=""></property>
  <property name="content_icon">ActivitatCG.gif</property>
  <property name="content_meta_type">ActivitatCG</property>
@@ -16,9 +16,10 @@
  <property name="allowed_content_types">
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">base_view</property>
+ <property name="default_view">activitat_view</property>
  <property name="view_methods">
   <element value="base_view"/>
+  <element value="activitat_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <alias from="(Default)" to="(dynamic view)"/>

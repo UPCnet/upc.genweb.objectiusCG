@@ -1,0 +1,7 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+  <subscriber
+      for=".content.interfaces.IActivitatCG
+           Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+      handler=".wfsubscribers.notificar"
+  />
+</configure>

@@ -5,81 +5,96 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
-<body>
+    <body>
 
-<div metal:fill-slot="main" >
-    <tal:main-macro metal:define-macro="main" >
+        <div metal:fill-slot="main" >
+            <tal:main-macro metal:define-macro="main" >
 
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
+                <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-        <h1>Activitat</h1>
+                <h1>Activitat:</h1>
 
-        <h2 class="documentFirstHeading"> 
-            <metal:field use-macro="python:here.widget('title', mode='view')">
-            </metal:field>
-        </h2>
+                <h2 class="documentFirstHeading"> 
+                    <metal:field use-macro="python:here.widget('title', mode='view')">
+                    </metal:field>
+                </h2>
 	
-<form tal:condition="view" name="activitat" method="POST" tal:attributes="action string:$here_url/activitat_view" enctype="multipart/form-data">
+                <form tal:condition="view" name="activitat" method="POST" tal:attributes="action string:$here_url/activitat_view" enctype="multipart/form-data">
 
-  <div class="visualClear"><!-- --></div>        
-	        
-  <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
-    <span></span>
+                    <div class="visualClear"><!-- --></div>        
+	                        
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
+                        <span></span>
 
-    <label style="font-size:1.3em;" for="texto">Notificació:</label>
-          
-    <div class="formHelp" id="texto_help">Enviament de missatges als responsables</div>
-    
-    <div class="fieldErrorBox"></div>
-    <br/>
-
-    <textarea class="blurrable firstToFocus" rows="15"
-            name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
+                        <label style="font-size:1.3em;" for="texto">Responsable de Gestió: @</label><br/><br/>
+                        <label style="font-size:1.1em;" for="texto">Escriu el text que vulguis enviar al Responsable de Gestió:</label>
+                        
+                        <div class="fieldErrorBox"></div>
+                      
+                            <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
 ...................
 ...................
 ...................
-    </textarea>
+                            </textarea>
 
-    <input type="hidden" name="texto_text_format" value="text/html" />
+                        <input type="hidden" name="texto_text_format" value="text/html" />
 
-  </div>
+                    </div>
 
-	<input type="hidden"
-                 name="form.submitted"
-                 value="1"
-                 />
+                    <input type="hidden"
+                                 name="form.submitted"
+                                 value="1"
+                    />
 
-            
-  <input class="context"
-         tabindex=""
-         type="submit"
-         name="form.button.send_mail_rg"
-         value="Adreça de correu del Responsable de Gestió"
-         tal:attributes="tabindex tabindex/next"
-  />             	            
+                    <input class="context"
+                         tabindex=""
+                         type="submit"
+                         name="form.button.send_mail_rg"
+                         value="Enviar missatge"
+                         tal:attributes="tabindex tabindex/next"
+                    />             	            
 
-            
-  <input class="context"
-         tabindex=""
-         type="submit"
-         name="form.button.send_mail_rcg"
-         value="Adreça de correu del Responsable del Consell de Govern"
-         tal:attributes="tabindex tabindex/next"
-  />             	            
+                    
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
+                        <span></span>
+                           
+                        <br/><br/>
+                        <label style="font-size:1.3em;" for="texto">Responsable del Consell de Govern: @</label><br/><br/>
+                        <label style="font-size:1.1em;" for="texto">Escriu el text que vulguis enviar al Responsable del Consell de Govern:</label>
+                        
+                        <div class="fieldErrorBox"></div>
+                      
+                            <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
+...................
+...................
+...................
+                            </textarea>
 
+                        <input type="hidden" name="texto_text_format" value="text/html" />
 
-  <div class="visualClear"><!-- --></div> 
+                    </div> 
        
-</form>
+                    <input class="context"
+                         tabindex=""
+                         type="submit"
+                         name="form.button.send_mail_rcg"
+                         value="Enviar missatge"
+                         tal:attributes="tabindex tabindex/next"
+                    />             	            
 
-<div tal:replace="structure provider:plone.abovecontentbody" />
-        
-    <div tal:replace="structure provider:plone.belowcontentbody" />
 
-    </tal:main-macro>
+                    <div class="visualClear"><!-- --></div> 
+                       
+                </form>
 
-</div>
+                <div tal:replace="structure provider:plone.abovecontentbody" />
+                    
+                <div tal:replace="structure provider:plone.belowcontentbody" />
 
-</body>
+            </tal:main-macro>
+
+        </div>
+
+    </body>
 </html>
 

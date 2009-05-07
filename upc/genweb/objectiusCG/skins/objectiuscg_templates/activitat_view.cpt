@@ -23,64 +23,94 @@
 
                     <div class="visualClear"><!-- --></div>        
 	                        
-                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-correu_RG">
                         <span></span>
 
-                        <label style="font-size:1.3em;" for="texto">Responsable de Gestió: @</label><br/><br/>
-                        <label style="font-size:1.1em;" for="texto">Escriu el text que vulguis enviar al Responsable de Gestió:</label>
+                        <label class="formQuestion"><span>Adreça de correu del Responsable de Gestió</span>:</label>
+                        <br>
                         
-                        <div class="fieldErrorBox"></div>
-                      
-                            <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
-...................
-...................
-...................
-                            </textarea>
-
-                        <input type="hidden" name="texto_text_format" value="text/html" />
-
+                        <span class="kssattr-atfieldname-correu_RG kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_RG" tal:content="context/getCorreu_RG">
+                                jorge.novoa@upcnet.es
+                        </span>
+                        
                     </div>
 
-                    <input type="hidden"
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-textmail">
+                        <span></span>
+                        <label class="formQuestion" for="textmail">Text del mail:</label>
+                            
+                        <div class="formHelp" id="description_help">Escriu el text que vulguis enviar al Responsable de Gestió:</div>
+                          
+                                                  
+                      
+                        <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
+                        </textarea>
+
+                        <input type="hidden"
                                  name="form.submitted"
                                  value="1"
-                    />
+                        />
 
-                    <input class="context"
+                        <input class="context"
                          tabindex=""
                          type="submit"
                          name="form.button.send_mail_rg"
                          value="Enviar missatge"
                          tal:attributes="tabindex tabindex/next"
-                    />             	            
+                        /> 
+                    </div>
 
-                    
-                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-contacto">
+                    <br/>
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-correu_RCG">
                         <span></span>
-                           
-                        <br/><br/>
-                        <label style="font-size:1.3em;" for="texto">Responsable del Consell de Govern: @</label><br/><br/>
-                        <label style="font-size:1.1em;" for="texto">Escriu el text que vulguis enviar al Responsable del Consell de Govern:</label>
+
+                        <label class="formQuestion"><span>Adreça de correu del Responsable del Consell de Govern</span>:</label>
+                          <br>
                         
-                        <div class="fieldErrorBox"></div>
+                            <span class="kssattr-atfieldname-correu_RCG kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_RG" tal:content="context/getCorreu_RCG">
+                                jorge.novoa@upcnet.es
+                            </span>
+                        
+                    </div>
+
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-textmail">
+                        <span></span>
+                        <label class="formQuestion" for="textmail">Text del mail:</label>
+                            
+                        <div class="formHelp" id="description_help">Escriu el text que vulguis enviar al Responsable del Consell de Govern:</div>
+                          
+                                                  
                       
-                            <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
-...................
-...................
-...................
-                            </textarea>
+                        <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
+                        </textarea>
 
-                        <input type="hidden" name="texto_text_format" value="text/html" />
+                        <input type="hidden"
+                                 name="form.submitted"
+                                 value="1"
+                        />
 
-                    </div> 
-       
-                    <input class="context"
+                        <input class="context"
                          tabindex=""
                          type="submit"
                          name="form.button.send_mail_rcg"
                          value="Enviar missatge"
                          tal:attributes="tabindex tabindex/next"
-                    />             	            
+                        /> 
+                    </div>
+
+                    <br/>
+                    <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-correu_Notificacions">
+                        <span></span>
+
+                        <label class="formQuestion"><span>Adreça de correu per Notificacions</span>:</label>
+                          <br>
+                        
+                            <span class="kssattr-atfieldname-correu_Notificacions kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_Notificacions" tal:content="context/getCorreu_Notificacions">
+                                jorge.novoa@upcnet.es
+                            </span>
+                        <div class="formHelp" id="description_help">Al passar una Activitat a "finalitzada", s'envia automàticament un missatge.</div>   
+                    </div>
+                    
 
 
                     <div class="visualClear"><!-- --></div> 

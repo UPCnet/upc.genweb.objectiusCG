@@ -74,6 +74,16 @@ class AccioCG(BaseFolder, BrowserDefaultMixin):
 
     # Methods
 
+    # Manually created methods
+
+    security.declarePublic('send_mail')
+    def send_mail(self,mail):
+        """
+        """
+        host = self.MailHost
+        host.send(mail)
+
+
 
 registerType(AccioCG, PROJECTNAME)
 # end of class AccioCG

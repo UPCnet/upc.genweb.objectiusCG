@@ -19,3 +19,9 @@ list-style-image:none;
 .contentActions {
 text-transform:none;
 }
+
+/*genweb-b...y2777.css (línia 577) */
+.context, .formControls .actionButtons .button, .documentEditable * .context {
+text-transform:none;
+}
+

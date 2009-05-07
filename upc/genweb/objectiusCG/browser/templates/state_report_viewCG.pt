@@ -27,11 +27,11 @@
 
 		  <tal:block tal:define="items view/getActivitatAcquisitionChain">
 		    <p>
-		     <form action="" name="state_change" method="post"
+		     <form action="" name="state_change" method="get"
 		     	   tal:attributes="action here/absolute_url">
-		     	   <input type="submit" name="state" value="No Iniciada" />&nbsp;
-		     	   <input type="submit" name="state" value="Iniciada" />&nbsp;
-		     	   <input type="submit" name="state" value="Finalizada" />&nbsp;
+		     	   <input type="submit" name="state" value="no_iniciada" />&nbsp;
+		     	   <input type="submit" name="state" value="iniciada" />&nbsp;
+		     	   <input type="submit" name="state" value="finalitzada" />&nbsp;
 		     	   <input type="submit" name="objectiu_general" value="Per Objectiu General" />&nbsp;
 		     </form>
 		    </p>

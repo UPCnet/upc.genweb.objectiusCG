@@ -24,7 +24,7 @@ class StateReportView(BrowserView):
         
         portal_catalog = getToolByName(self.context, 'portal_catalog')
         contentFilter={}
-        
+        #import pdb;pdb.set_trace()
         cur_path = '/'.join(self.context.getPhysicalPath())
         contentFilter['portal_type']="ActivitatCG"
         if state is not None:
@@ -39,13 +39,15 @@ class StateReportView(BrowserView):
 
         contentFilter['sort_on']='getObjPositionInParent'
 
-        return portal_catalog.searchResults(contentFilter)
+        result = portal_catalog.searchResults(contentFilter)
+        return result
     
     def getActivitatAcquisitionChain(self,state=None):
         
         activitats = self.getActivitatByState(state)
         
         data = []
+        
         for activitat in activitats:
             obj = activitat.getObject()
             accio = aq_parent(aq_inner(obj))

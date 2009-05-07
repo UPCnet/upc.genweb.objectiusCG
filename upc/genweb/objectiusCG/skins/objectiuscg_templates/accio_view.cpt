@@ -35,22 +35,21 @@
                         <span></span>
                         
 
-
                     <div class="field ArchetypesField-StringField" id="archetypes-fieldname-correu_RG">
-                                       
-                          <label class="formQuestion"><span>Adreça de correu del Responsable de Gestió</span>:</label>
-                          <br>
+                        <span></span>            
                         
-                            <span class="kssattr-atfieldname-correu_RG kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_RG" tal:content="context/getCorreu_RG">
+                        <label class="formQuestion"><span>Adreça de correu del Responsable de Gestió</span>:</label>
+                        <br>
+                        
+                        <span class="kssattr-atfieldname-correu_RG kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_RG" tal:content="context/getCorreu_RG">
                                 jorge.novoa@upcnet.es
-                            </span>
+                        </span>
                         
                     </div>
 
-
                     <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-textmail">
                         <span></span>
-                        <label class="formQuestion" for="textmail">Text del mail</label>
+                        <label class="formQuestion" for="textmail">Text del mail:</label>
                             
                         <div class="formHelp" id="description_help">Escriu el text que vulguis enviar al Responsable de Gestió:</div>
                           
@@ -60,27 +59,26 @@
                         </textarea>
                        
 
+	                    <input type="hidden"
+                                     name="form.submitted"
+                                     value="1"
+                        />
+
+                        <input class="context"
+                            tabindex=""
+                            type="submit"
+                            name="form.button.send_mail_rg"
+                            value="Enviar missatge"
+                            tal:attributes="tabindex tabindex/next"
+                        />             	            
+                        </div>
 
 
-	                <input type="hidden"
-                                 name="form.submitted"
-                                 value="1"
-                    />
-
-                    <input class="context"
-                        tabindex=""
-                        type="submit"
-                        name="form.button.send_mail_rg"
-                        value="Enviar missatge"
-                        tal:attributes="tabindex tabindex/next"
-                    />             	            
-                    </div>
-
-                    <br/>
-                    <div class="field">
-                    <span></span>
-                    <label for="texto">Llista d'Activitats que pertanyen a aquesta Acció:</label>
-                    <metal:use_body use-macro="folderlisting_macro" />
+                        <br/>
+                        <div class="field">
+                        <span></span>
+                        <label for="texto">Llista d'Activitats que pertanyen a aquesta Acció:</label>
+                        <metal:use_body use-macro="folderlisting_macro" />
                     </div>
 
 

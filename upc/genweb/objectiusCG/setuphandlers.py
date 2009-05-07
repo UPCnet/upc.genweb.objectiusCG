@@ -42,11 +42,11 @@ def postInstall(context):
     if isNotobjectiusCGProfile(context): return
     site = context.getSite()
 
-    crearObjecte(site,'PSIO','Folder','Plans de Suport a la Igualtat dOportunitats','Carpeta arrel',exclude=True)
+    crearObjecte(site,'psio','Folder','Plans de Suport a la Igualtat dOportunitats','Carpeta arrel',exclude=True)
 
-    crearObjecte(site.PSIO,'GENERE','Folder','Genere','Carpeta de Genere',exclude=True)
+    crearObjecte(site.psio,'genere','Folder','Genere','Carpeta de Genere',exclude=True)
 
-    crearObjecte(site.PSIO,'DISCAPACITATS','Folder','Discapacitats','Carpeta de Discapacitats',exclude=True)
+    crearObjecte(site.psio,'discapacitats','Folder','Discapacitats','Carpeta de Discapacitats',exclude=True)
 
 
 

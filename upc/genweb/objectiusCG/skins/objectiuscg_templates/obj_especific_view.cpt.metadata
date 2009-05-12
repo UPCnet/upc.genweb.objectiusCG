@@ -1,0 +1,9 @@
+[default]
+title = Llistat d'Accions
+
+[validators]
+ 
+
+[actions]
+action.success = traverse_to_action:string:view
+action.failure = traverse_to_action:string:obj_especific_view

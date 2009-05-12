@@ -11,7 +11,12 @@
 
     <div metal:fill-slot="main">
 
-      <metal:main_macro define-macro="main">
+      <metal:main_macro define-macro="main"
+            tal:define="portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
+                    base_macros here/base/macros;
+                    view_template python:'%s_view' % portal_type;
+                    view_macros python:path('here/%s/macros|nothing' % view_template);
+                    folderlisting_macro view_macros/folderlisting | folderlisting | base_macros/folderlisting;">
 
         <metal:header_macro define-macro="header">
           <div metal:use-macro="here/document_actions/macros/document_actions">
@@ -43,6 +48,12 @@
                 <metal:use_macro use-macro="fl_macro" />
             </tal:if_folderlisting>
         </metal:folderlisting_macro>
+
+        <br/>
+        <div class="field">
+        <span></span>
+        <label for="texto">Llista d'Activitats que pertanyen a aquesta Acció:</label>
+        <metal:use_body use-macro="folderlisting_macro" />
 
         <metal:footer_macro define-macro="footer">
         </metal:footer_macro>

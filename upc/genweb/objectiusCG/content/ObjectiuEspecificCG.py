@@ -22,6 +22,7 @@ from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from upc.genweb.objectiusCG.config import *
 
 ##code-section module-header #fill in your manual code here
+from Products.ATContentTypes.content.schemata import ATContentTypeSchema
 ##/code-section module-header
 
 schema = Schema((
@@ -46,6 +47,8 @@ ObjectiuEspecificCG_schema = BaseFolderSchema.copy() + \
     schema.copy()
 
 ##code-section after-schema #fill in your manual code here
+ObjectiuEspecificCG_schema = BaseFolderSchema.copy() + ATContentTypeSchema.copy() + \
+    schema.copy()
 ##/code-section after-schema
 
 class ObjectiuEspecificCG(BaseFolder, BrowserDefaultMixin):

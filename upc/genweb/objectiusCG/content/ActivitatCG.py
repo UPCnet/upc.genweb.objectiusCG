@@ -99,11 +99,20 @@ class ActivitatCG(ATDocument):
     # Manually created methods
 
     security.declarePublic('send_mail')
-    def send_mail(self,mail):
+    def send_mail(self,mail,to,subject):
         """
         """
         host = self.MailHost
-        host.send(mail)
+        #import pdb;pdb.set_trace(),
+
+        result = host.secureSend(mail,
+                                to.encode('UTF-8'),
+                                'relay@upcnet.es'.encode('UTF-8'),
+                                subject=subject,
+                                subtype='plain',
+                                charset='UTF-8',
+                                debug=False,
+                                From='relay@upcnet.es'.encode('UTF-8'))
 
 
 

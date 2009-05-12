@@ -8,7 +8,7 @@
     id="objectiusCG-Update-RoleMappings" 
     handler="upc.genweb.objectiusCG.setuphandlers.updateRoleMappings"
     title="Update Workflow role mappings for objectiusCG"
-    version="2009-05-06T11:31:46.106103">
+    version="2009-05-12T10:45:58.283131">
    <dependency step="objectiusCG-QI-dependencies"/>
    updates the workflow role mappings for objectiusCG
  </import-step>
@@ -17,7 +17,7 @@
     id="objectiusCG-postInstall" 
     handler="upc.genweb.objectiusCG.setuphandlers.postInstall"
     title="manual coded post-install for objectiusCG"
-    version="2009-05-06T11:31:46.106103">
+    version="2009-05-12T10:45:58.283131">
    <dependency step="objectiusCG-QI-dependencies"/>
    manual coded post-install for objectiusCG
  </import-step>

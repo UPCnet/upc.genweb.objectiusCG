@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+    <body>
+
+        <div metal:fill-slot="main" >
+            <tal:main-macro metal:define-macro="main" 
+                  tal:define="portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
+                    base_macros here/base/macros;
+                    view_template python:'%s_view' % portal_type;
+                    view_macros python:path('here/%s/macros|nothing' % view_template);
+                    folderlisting_macro view_macros/folderlisting | folderlisting | base_macros/folderlisting;">
+
+                <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+                <h1>Objectius Generals:</h1>
+
+                <h2 class="documentFirstHeading"> 
+                    <metal:field use-macro="python:here.widget('title', mode='view')">
+                    </metal:field>
+                </h2>
+
+                
+                    <div class="visualClear"><!-- --></div> 
+
+                    <br/>
+                    <div class="field">
+                        <span></span>
+                        <label for="texto">Llista d'Objectius Específics que pertanyen a aquest Objectiu General:</label>
+                        <metal:use_body use-macro="folderlisting_macro" />
+                    </div>
+                    
+                    <div class="visualClear"><!-- --></div> 
+
+
+                <div tal:replace="structure provider:plone.abovecontentbody" />
+                
+                <div tal:replace="structure provider:plone.belowcontentbody" />
+
+
+            </tal:main-macro>
+
+        </div>
+
+    </body>
+</html>

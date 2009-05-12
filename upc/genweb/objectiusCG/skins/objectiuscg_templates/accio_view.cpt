@@ -39,7 +39,7 @@
                         <span></span>            
                         
                         <label class="formQuestion"><span>Adreça de correu del Responsable de Gestió</span>:</label>
-                        <br>
+                        <br/>
                         
                         <span class="kssattr-atfieldname-correu_RG kssattr-templateId-widgets/string kssattr-macro-string-field-view inlineEditable" id="parent-fieldname-correu_RG" tal:content="context/getCorreu_RG">
                                 jorge.novoa@upcnet.es
@@ -49,14 +49,12 @@
 
                     <div class="field ArchetypesTextAreaWidget" id="archetypes-fieldname-textmail">
                         <span></span>
-                        <label class="formQuestion" for="textmail">Text del mail:</label>
-                            
+                                                    
+                        <br/>                        
                         <div class="formHelp" id="description_help">Escriu el text que vulguis enviar al Responsable de Gestió:</div>
                           
                                                   
-                      
-                        <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:
-                        </textarea>
+                        <textarea class="blurrable firstToFocus" rows="5" name="texte_del_miss" cols="40" id="texte_del_miss">Estimat responsable:</textarea>
                        
 
 	                    <input type="hidden"
@@ -71,11 +69,11 @@
                             value="Enviar missatge"
                             tal:attributes="tabindex tabindex/next"
                         />             	            
-                        </div>
+                    </div>
 
 
-                        <br/>
-                        <div class="field">
+                    <br/>
+                    <div class="field">
                         <span></span>
                         <label for="texto">Llista d'Activitats que pertanyen a aquesta Acció:</label>
                         <metal:use_body use-macro="folderlisting_macro" />

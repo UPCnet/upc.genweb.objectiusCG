@@ -1,9 +1,12 @@
+<tal:block tal:condition="python: 'mostrar_clicked' in request and request.get('display_mode') == 'Fitxer'"><span tal:replace="structure view/sendToFile"></span></tal:block>
+<tal:block tal:condition="python: request.get('display_mode','Pantalla') == 'Pantalla'">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="here/main_template/macros/master">
+      metal:use-macro="here/main_template/macros/master"
+      tal:condition="python: request.get('display_mode','Pantalla') == 'Pantalla'">
 
   <head><title></title></head>
 
@@ -25,59 +28,67 @@
           </tal:has_document_byline>
         </metal:header_macro>
 
-		  <tal:block tal:define="items view/getActivitatAcquisitionChain">
-		    <p>
-		     <form action="" name="state_change" method="get"
-		     	   tal:attributes="action here/absolute_url">
-		     	   <input type="submit" name="state" value="no_iniciada" />&nbsp;
-		     	   <input type="submit" name="state" value="iniciada" />&nbsp;
-		     	   <input type="submit" name="state" value="finalitzada" />&nbsp;
-		     	   <input type="submit" name="objectiu_general" value="Per Objectiu General" />&nbsp;
-		     </form>
-		    </p>
-          	<p>hay <b tal:content="python:len(items)" /> activitats</p>
-          	<br/>
-          	<ul tal:condition="python: 'objectiu_general' not in request">
-          		<li tal:repeat="item items">
-          			<tal:block content="python:item['obj_gen'].title" />, 
-          			<tal:block content="python:item['obj_esp'].title" />,  
-          			<tal:block content="python:item['accio'].title" />, 
-          			<tal:block content="python:item['activitat'].title" />.
-          			 
-          		</li>
-          	</ul>
-          </tal:block>
-          
-          
-          <ul class="estilo_ul_cg" tal:condition="python: 'objectiu_general' in request" tal:define="obj_gens python:view.getResults('ObjectiuGeneralCG')">
+
+        
+        <form action="" name="Accio_o_Activitat" method="get"
+            tal:attributes="action here/absolute_url">
+
+            <br>Selecciona el filtre segons l'estat de l'Acci&oacute :&nbsp;
+            <tal:block content="structure python:view.buildInput('state')"></tal:block>
+      
+         	<br>Selecciona el nivell de profunditat del llistat:&nbsp;
+            <tal:block content="structure python:view.buildInput('ACCIO_ACT')"></tal:block>           
+
+           <br>Selecciona el format de sortida:&nbsp;
+            <tal:block content="structure python:view.buildInput('display_mode')"></tal:block>
+
+            <br>
+            <input type="submit" name="mostrar_clicked" onclick="get_radio_value()">
+        </form>
+        <hr/><br>
+   
+   
+        <tal:pantalla condition="python: 'mostrar_clicked' in request and request.get('display_mode') == 'Pantalla'">
+          <ul class="estilo_ul_cg" tal:define="obj_gens python:view.getResults('ObjectiuGeneralCG')">
             <li tal:repeat="gen obj_gens">
-          	 <tal:block tal:define="obj gen/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	  <tal:block tal:define="obj gen/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
           	 
-          	 	<ul tal:condition="obj_esps" tal:define="obj_esps python:view.getResults('ObjectiuEspecificCG', gen.id)">
-          	 		<li tal:repeat="esp obj_esps">
-          	 			<tal:block tal:define="obj esp/getObject"> <a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	    <ul tal:condition="obj_esps" tal:define="obj_esps python:view.getResults('ObjectiuEspecificCG', gen.id)">
+          	 	  <li tal:repeat="esp obj_esps">
+          	 	    <tal:block tal:define="obj esp/getObject"> <a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
           	 				
-          	 				<ul tal:condition="obj_accs" tal:define="ids_url python:'%s/%s' %(gen.id,esp.id);obj_accs python:view.getResults('AccioCG', ids_url)">
-          	 					<li tal:repeat="acc obj_accs">
-          	 						<tal:block tal:define="obj acc/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
-          	 				
-          	 							<ul tal:condition="obj_acts" tal:define="ids_url python:'%s/%s/%s' %(gen.id,esp.id,acc.id);obj_acts python:view.getResults('ActivitatCG', ids_url)">
-          	 								<li tal:repeat="act obj_acts">
-          	 									<tal:block tal:define="obj act/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
-          	 				
-          	 							
-          									</li>
-          	 							</ul>
-          						</li>
-          	 				</ul>
-          			</li>
+          	 		  <ul tal:condition="obj_accs" tal:define="ids_url python:'%s/%s' %(gen.id,esp.id);obj_accs python:view.getResults('AccioCG', ids_url)">
+          	 		    <li tal:repeat="acc obj_accs">
+          	 			  <tal:block tal:define="obj acc/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+                          
+                            <tal:AccioActblock condition="python: 'ACCIO_ACT' in request and request['ACCIO_ACT']=='ACTIVITAT'">
+          	 				  <ul tal:condition="obj_acts" tal:define="ids_url python:'%s/%s/%s' %(gen.id,esp.id,acc.id);obj_acts python:view.getResults('ActivitatCG', ids_url)">
+          	 					<li tal:repeat="act obj_acts">
+          	 					  <tal:block tal:define="obj act/getObject"><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"/></tal:block>
+          	 				    </li>
+
+          	 				  </ul>
+          	 				</tal:AccioActblock>
+
+          				</li>
+          	 		  </ul>
+
+          		  </li>
           	 	</ul>
           	 	
           	</li>
-          
           </ul>
-          
-          
+          <br><hr/>
+        </tal:pantalla>
+
+
+
+        <tal:fitxer condition="python: 'mostrar_clicked' in request and request.get('display_mode') == 'Fitxer'">
+                Fitxer...
+          <tal:doit content="view/sendToFile"/>
+        </tal:fitxer>
+
+
         <metal:body_macro metal:define-macro="body"
                           tal:define="field_macro field_macro | here/widgets/field/macros/view;"
                           tal:repeat="field python:here.Schema().filterFields(isMetadata=0)">
@@ -108,4 +119,4 @@
   </body>
 
 </html>
-
+</tal:block>

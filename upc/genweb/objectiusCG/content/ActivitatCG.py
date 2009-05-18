@@ -44,7 +44,6 @@ schema = Schema((
             label_msgid='objectiusCG_label_correu_RG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
-        required=1,
     ),
     StringField(
         name='correu_RCG',
@@ -53,7 +52,6 @@ schema = Schema((
             label_msgid='objectiusCG_label_correu_RCG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
-        required=1,
     ),
     StringField(
         name='correu_Notificacions',
@@ -62,7 +60,6 @@ schema = Schema((
             label_msgid='objectiusCG_label_correu_Notificacions',
             i18n_domain='upc.genweb.objectiusCG',
         ),
-        required=1,
     ),
 
 ),

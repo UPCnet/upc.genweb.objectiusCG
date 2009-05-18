@@ -42,7 +42,6 @@ schema = Schema((
             label_msgid='objectiusCG_label_correu_RG',
             i18n_domain='upc.genweb.objectiusCG',
         ),
-        required=1,
     ),
 
 ),

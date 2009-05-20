@@ -115,14 +115,11 @@ class StateReportView(BrowserView):
                 code = code+'<input type="radio" name="ACCIO_ACT" value="ACTIVITAT"/>&nbsp;Activitat'
 
         elif name == 'display_mode':
-            if self.request.get('display_mode') == 'Pantalla':
-                code = code+'<input type="radio" name="display_mode" value="Pantalla" checked="checked"/>&nbsp;Pantalla&nbsp;&nbsp;'
-                code = code+'<input type="radio" name="display_mode" value="Fitxer"/>&nbsp;Fitxer'
-            elif self.request.get('display_mode') == 'Fitxer':
+            if self.request.get('display_mode') == 'Fitxer':
                 code = code+'<input type="radio" name="display_mode" value="Pantalla"/>&nbsp;Pantalla&nbsp;&nbsp;'
                 code = code+'<input type="radio" name="display_mode" value="Fitxer" checked="checked"/>&nbsp;Fitxer'
             else:
-                code = code+'<input type="radio" name="display_mode" value="Pantalla"/>&nbsp;Pantalla&nbsp;&nbsp;'
+                code = code+'<input type="radio" name="display_mode" value="Pantalla" checked="checked"/>&nbsp;Pantalla&nbsp;&nbsp;'
                 code = code+'<input type="radio" name="display_mode" value="Fitxer"/>&nbsp;Fitxer'
         else:
             code = code+'<input type="radio" name="state" value="no_iniciada"/>&nbsp;No iniciada&nbsp;&nbsp;'
@@ -133,7 +130,7 @@ class StateReportView(BrowserView):
             code = code+'<input type="radio" name="ACCIO_ACT" value="ACCIO"/>&nbsp;Acci&oacute; &nbsp;&nbsp;'
             code = code+'<input type="radio" name="ACCIO_ACT" value="ACTIVITAT"/>&nbsp;Activitat'
 
-            code = code+'<input type="radio" name="display_mode" value="Pantalla"/>&nbsp;Pantalla&nbsp;&nbsp;'
+            code = code+'<input type="radio" name="display_mode" value="Pantalla" checked="checked"/>&nbsp;Pantalla&nbsp;&nbsp;'
             code = code+'<input type="radio" name="display_mode" value="Fitxer"/>&nbsp;Fitxer'
 
         return code

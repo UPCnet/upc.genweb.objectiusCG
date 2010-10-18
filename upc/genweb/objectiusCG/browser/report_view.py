@@ -47,6 +47,7 @@ class StateReportView(BrowserView):
         return portal_catalog.searchResults(contentFilter)
 
 
+    """
     def sendToFile(self):
         rows = ''
 
@@ -71,7 +72,31 @@ class StateReportView(BrowserView):
         self.request.RESPONSE.setHeader('Content-type','application/csv')
         
         return rows
-    
+    """
+    def sendToFile(self):
+        rows = ''
+
+        objgens = self.getResults('ObjectiuGeneralCG')
+        for objgen in objgens:
+            rows = '%s%s\n' % (rows,'%s|||' % objgen.Title.replace('\r', '').replace('\n', '').replace('\t', ''))
+            objesps = self.getResults('ObjectiuEspecificCG',objgen.id)
+            for objesp in objesps:
+                rows = '%s%s\n' % (rows,'|%s||' % objesp.Title.replace('\r', '').replace('\n', '').replace('\t', ''))
+                #import pdb;pdb.set_trace() 
+                
+                accions = self.getResults('AccioCG',('%s/%s' %(objgen.id,objesp.id)))
+                for accio in accions:
+                    rows = '%s%s\n' % (rows,'||%s|' % accio.Title.replace('\r', '').replace('\n', '').replace('\t', ''))
+                    if self.request.get('ACCIO_ACT') == 'ACTIVITAT':
+
+                        acts = self.getResults('ActivitatCG',('%s/%s/%s' %(objgen.id,objesp.id,accio.id)))
+                        for act in acts:
+                            rows = '%s%s\n' % (rows,'|||%s' % act.Title.replace('\r', '').replace('\n', '').replace('\t', ''))
+
+        self.request.RESPONSE.setHeader('content-disposition','filename=consulta.csv')
+        self.request.RESPONSE.setHeader('Content-type','application/csv')
+        
+        return rows
 
     def buildInput(self,name=None):
         code = ''

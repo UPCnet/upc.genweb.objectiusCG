@@ -1,7 +1,11 @@
 Changelog
 =========
 
-1.0 (xxxx-xx-xx)
+1.1 (2010-10-19)
+----------------
+* Correcció de bug a la generació de reports.
+
+1.0 (primera versió)
 ----------------
 
 * Initial release

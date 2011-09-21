@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1'
+version = '1.2'
 
 setup(name='upc.genweb.objectiusCG',
       version=version,
@@ -17,7 +17,7 @@ setup(name='upc.genweb.objectiusCG',
       keywords='',
       author='Plone Team @ UPCnet',
       author_email='plone.team@upcnet.es',
-      url='',
+      url='http://github.com/upcnet/upc.genweb.objectiusCG',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['upc', 'upc.genweb'],
@@ -29,5 +29,7 @@ setup(name='upc.genweb.objectiusCG',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )

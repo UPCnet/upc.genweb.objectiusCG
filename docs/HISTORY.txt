@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2 (2011-11-25)
+----------------
+* GenwebUPC 4 ready.
+
 1.1 (2010-10-19)
 ----------------
 * Correcció de bug a la generació de reports.

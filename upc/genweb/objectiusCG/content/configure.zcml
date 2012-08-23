@@ -13,11 +13,6 @@
             interface="..interfaces.IActivitatCG"
             />
 
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IActivitatCG"
-            />
-
     </class>
 
     <class class=".AccioCG.AccioCG">
@@ -25,11 +20,6 @@
         <require
             permission="zope2.View"
             interface="..interfaces.IAccioCG"
-            />
-
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IAccioCG"
             />
 
     </class>
@@ -41,11 +31,6 @@
             interface="..interfaces.IObjectiuEspecificCG"
             />
 
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IObjectiuEspecificCG"
-            />
-
     </class>
 
     <class class=".ObjectiuGeneralCG.ObjectiuGeneralCG">
@@ -53,11 +38,6 @@
         <require
             permission="zope2.View"
             interface="..interfaces.IObjectiuGeneralCG"
-            />
-
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IObjectiuGeneralCG"
             />
 
     </class>

@@ -57,7 +57,6 @@ class StateReportView(BrowserView):
             objesps = self.getResults('ObjectiuEspecificCG',objgen.id)
             for objesp in objesps:
                 rows = '%s%s\n' % (rows,'|%s||' % objesp.Title)
-                #import pdb;pdb.set_trace() 
                 
                 accions = self.getResults('AccioCG',('%s/%s' %(objgen.id,objesp.id)))
                 for accio in accions:
@@ -82,7 +81,6 @@ class StateReportView(BrowserView):
             objesps = self.getResults('ObjectiuEspecificCG',objgen.id)
             for objesp in objesps:
                 rows = '%s%s\n' % (rows,'|%s||' % objesp.Title.replace('\r', '').replace('\n', '').replace('\t', ''))
-                #import pdb;pdb.set_trace() 
                 
                 accions = self.getResults('AccioCG',('%s/%s' %(objgen.id,objesp.id)))
                 for accio in accions:
@@ -100,7 +98,6 @@ class StateReportView(BrowserView):
 
     def buildInput(self,name=None):
         code = ''
-        #import pdb;pdb.set_trace();
         if name == 'state':
             if self.request.get('state') == 'no_iniciada':
                 code = code+'<input type="radio" name="state" value="no_iniciada" checked="checked"/>&nbsp;No iniciada&nbsp;&nbsp;'

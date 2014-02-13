@@ -80,7 +80,6 @@ class AccioCG(BaseFolder, BrowserDefaultMixin):
         """
         """
         host = self.MailHost
-        #import pdb;pdb.set_trace(),
 
         result = host.secureSend(mail,
                                 to.encode('UTF-8'),

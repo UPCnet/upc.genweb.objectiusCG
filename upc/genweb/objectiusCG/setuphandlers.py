@@ -69,7 +69,6 @@ def doWorkflowAction(context):
     
 def crearObjecte(context,id,type_name,title,description,exclude=False,constrains=None):
     pt = getToolByName(context,'portal_types')
-    #import pdb;pdb.set_trace()
     if not getattr(context,id,False) and type_name in pt.listTypeTitles().keys():
         #creem l'objecte i el publiquem
         _createObjectByType(type_name, context, id)
